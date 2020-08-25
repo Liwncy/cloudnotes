@@ -14,7 +14,7 @@ Stream API可以极大提高Java程序员的生产力，让程序员写出高效
 
 以上的流程转换为 Java 代码为：
 
-```
+```java
 List<Integer> transactionsIds =
 widgets.stream()
              .filter(b -> b.getColor() == RED)
@@ -42,7 +42,7 @@ Stream（流）是一个来自数据源的元素队列并支持聚合操作
  + stream() − 为集合创建串行流。
  + parallelStream() − 为集合创建并行流。
 
-```
+```java
 List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 ```
@@ -50,7 +50,7 @@ List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).col
 # forEach
 Stream 提供了新的方法 'forEach' 来迭代流中的每个数据。以下代码片段使用 forEach 输出了10个随机数：
 
-```
+```java
 Random random = new Random();
 random.ints().limit(10).forEach(System.out::println);
 ```
@@ -58,7 +58,7 @@ random.ints().limit(10).forEach(System.out::println);
 # map
 map 方法用于映射每个元素到对应的结果，以下代码片段使用 map 输出了元素对应的平方数：
 
-```
+```java
 List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
 // 获取对应的平方数
 List<Integer> squaresList = numbers.stream().map( i -> i*i).distinct().collect(Collectors.toList());
@@ -67,7 +67,7 @@ List<Integer> squaresList = numbers.stream().map( i -> i*i).distinct().collect(C
 # filter
 filter 方法用于通过设置的条件过滤出元素。以下代码片段使用 filter 方法过滤出空字符串：
 
-```
+```java
 List<String>strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 // 获取空字符串的数量
 long count = strings.stream().filter(string -> string.isEmpty()).count();
@@ -84,7 +84,7 @@ random.ints().limit(10).forEach(System.out::println);
 # sorted
 sorted 方法用于对流进行排序。以下代码片段使用 sorted 方法对输出的 10 个随机数进行排序：
 
-```
+```java
 Random random = new Random();
 random.ints().limit(10).sorted().forEach(System.out::println);
 ```
@@ -92,7 +92,7 @@ random.ints().limit(10).sorted().forEach(System.out::println);
 # 并行（parallel）程序
 parallelStream 是流并行处理程序的代替方法。以下实例我们使用 parallelStream 来输出空字符串的数量：
 
-```
+```java
 List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 // 获取空字符串的数量
 int count = strings.parallelStream().filter(string -> string.isEmpty()).count();
