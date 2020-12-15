@@ -1,7 +1,7 @@
 ##如何系统全面地自学 Java 语言？
 
 以下分享的视频教程 99% 来源于B站（哔哩哔哩），其余来自于慕课网，有的视频得反反复复来回看，希望这些视频能帮助你系统全面地自学 Java 语言。
-###一、Java基础
+### 一、Java基础
 * 尚硅谷宋红康（强力推荐）
 * https://www.bilibili.com/video/av48144058
 * 动力节点Java零基础教程视频
@@ -12,7 +12,7 @@
 * https://www.bilibili.com/video/av76235341
 * 尚硅谷Java8新特性+JUC+NIO
 * https://www.bilibili.com/video/av71563078
-###二、数据结构与算法
+### 二、数据结构与算法
 * 郝斌-数据结构入门
 * https://www.bilibili.com/video/av6159200
 * 尚硅谷韩顺平图解Java数据结构与算法
@@ -23,17 +23,17 @@
 * https://www.bilibili.com/video/av49361421
 * (小甲鱼）数据结构与算法（全99讲完结版）
 * https://www.bilibili.com/video/av29175690
-###三、图解Java设计模式
+### 三、图解Java设计模式
 * 尚硅谷韩顺平-强烈推荐
 * https://www.bilibili.com/video/av57936239
-###四、Java源码
+### 四、Java源码
 * Java 源码分析
 * https://www.bilibili.com/video/av74161334
 * HashMap源码解读
 * https://www.bilibili.com/video/av75133052
 * B站最全Spring全家桶教程——深入源码底层（2019最新）
 * https://www.bilibili.com/video/av64330731
-###五、Java框架整合
+### 五、Java框架整合
 * 尚硅谷Java视频教程_SSM整合视频教程
 * https://www.bilibili.com/video/av21045215
 * 尚硅谷雷丰阳大神的Spring、Spring MVC、MyBatis课程
@@ -44,7 +44,7 @@
 * https://www.bilibili.com/video/av29422149
 * SSM框架整合教学IDEA版最新
 * https://www.bilibili.com/video/av73118229
-###六、Spring源码
+### 六、Spring源码
 * spring源码全集
 * https://www.bilibili.com/video/av71093907
 * Spring4.x入门视频教程_王泽(广陵散)
@@ -53,7 +53,7 @@
 * https://www.bilibili.com/video/av71252572
 * Spring5最新完整教程IDEA版【通俗易懂】
 * https://www.bilibili.com/video/av71110355
-###七、SpringMVC
+### 七、SpringMVC
 * 尚硅谷佟刚Java视频教程_SpringMVC视频
 * https://www.bilibili.com/video/av21272240
 * SpringMVC最新教程IDEA版
@@ -62,7 +62,7 @@
 * https://www.bilibili.com/video/av18288362
 * 千锋Java：SpringMVC框架教程
 * https://www.bilibili.com/video/av45556876
-###八、Mybatis、MyBatisPlus
+### 八、Mybatis、MyBatisPlus
 * 尚硅谷Java视频教程_MyBatis视频教程（源码级讲授的MyBatis视频）
 * https://www.bilibili.com/video/av21272940
 * 尚硅谷MyBatisPlus教程
@@ -73,7 +73,7 @@
 * https://www.imooc.com/learn/1130
 * MyBatis-Plus进阶
 * https://www.imooc.com/learn/1171
-###九、SpringBoot
+### 九、SpringBoot
 * 尚硅谷SpringBoot整合篇
 * https://www.bilibili.com/video/av23284778
 * SpringBoot最新教程IDEA版
@@ -82,7 +82,7 @@
 * https://www.bilibili.com/video/av78917587
 * 尚硅谷好评如潮【SpringBoot】视频
 * https://www.bilibili.com/video/av20965295
-###十、SpringCloud
+### 十、SpringCloud
 * SpringCloud-尚硅谷
 * https://www.bilibili.com/video/av49106064
 * 2018千锋Java高级教程-Java微服务架构
@@ -91,14 +91,14 @@
 * https://www.bilibili.com/video/av76020761
 * SpringCloud+Vue项目实战——社交项目
 * https://www.bilibili.com/video/av63499215
-###十一、JVM
+### 十一、JVM
 * juc 与 jvm - Java 必学 2019版本-阳哥- 尚硅谷- idea
 * https://www.bilibili.com/video/av70166821
 * 尚硅谷_JVM从入门到精通宋红康2020版（持续更新中）
 * https://www.bilibili.com/video/av83622425
 * 深入理解JVM-张龙
 * https://www.bilibili.com/video/av75247289
-###十二、数据库与缓存
+### 十二、数据库与缓存
 * 尚硅谷周阳（强力推荐）
 * https://www.bilibili.com/video/av21334868
 * MySQL 基础+高级篇- 数据库 -sql -尚硅谷
@@ -109,14 +109,14 @@
 * https://www.bilibili.com/video/av51139549
 * 千锋微服务2019最新Redis教程[千锋南京]
 * https://www.bilibili.com/video/av49517046
-###十三、Linux
+### 十三、Linux
 * 尚硅谷_韩顺平_Linux教程
 * https://www.bilibili.com/video/av21303002
 * 史上最牛的Linux视频教程—兄弟连
 * https://www.bilibili.com/video/av18156598
 * 黑马程序员-linux从入门到精通
 * https://www.bilibili.com/video/av23360560
-###十四、工具篇
+### 十四、工具篇
 * 尚硅谷Java视频教程_Maven视频
 * https://www.bilibili.com/video/av36557763
 * Maven基础篇
@@ -133,7 +133,7 @@
 * https://www.bilibili.com/video/av24441039
 * 1小时玩转 Git/Github
 * https://www.bilibili.com/video/av55780016
-###十五、分布式
+### 十五、分布式
 * Dubbo 视频教程全集（30P）| 4 小时从入门到精通
 * https://www.bilibili.com/video/av62353311
 * 尚硅谷Zookeeper教程(zookeeper框架精讲)
@@ -142,7 +142,7 @@
 * https://www.bilibili.com/video/av65496118
 * 最新ElasticSearch6实战教程
 * https://www.bilibili.com/video/av35882450
-###十六、实战篇
+### 十六、实战篇
 * 2020课程-分支教程--SpringBoot2.0-_好客租房项目
 * https://www.bilibili.com/video/av86786545
 * 畅购商城2019最新JAVA项目实战
@@ -155,7 +155,7 @@
 * https://www.bilibili.com/video/av45911661
 * SpringBoot项目实战：企业项目管理系统
 * https://www.bilibili.com/video/av65870246
-###十七、GitHub开源项目
+### 十七、GitHub开源项目
 * SpringBoot学习教程+实战项目推荐
 * spring-boot-demo
 * spring boot demo 是一个用来深度学习并实战 spring boot 的项目，目前总共包含 65 个集成 demo，已经完成 53 个。
