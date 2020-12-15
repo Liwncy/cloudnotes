@@ -1,4 +1,4 @@
-##127个常用的JS代码片段，每段代码花30秒就能看懂（一）
+## 127个常用的JS代码片段，每段代码花30秒就能看懂（一）
 JavaScript 是目前最流行的编程语言之一，正如大多数人所说：“如果你想学一门编程语言，请学JavaScript。”
 
 
@@ -11,7 +11,7 @@ FreeCodeCamp的创始人 Quincy Larson 在最近的一次采访中被问到哪�
 
 
 
-##1、all
+## 1、all
 
 
 如果数组所有元素满足函数条件，则返回true。调用时，如果省略第二个参数，则默认传递布尔值。
@@ -27,7 +27,7 @@ all([1, 2, 3]); // true
 
 
 ```
-##2、allEqual
+## 2、allEqual
 
 
 判断数组中的元素是否都相等
@@ -43,7 +43,7 @@ allEqual([1, 1, 1, 1]); // true
 
 
 ```
-##3、approximatelyEqual
+## 3、approximatelyEqual
 
 
 此代码示例检查两个数字是否近似相等，差异值可以通过传参的形式进行设置
@@ -56,7 +56,7 @@ const approximatelyEqual = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsi
 
 approximatelyEqual(Math.PI / 2.0, 1.5708); // true
 ```
-##4、arrayToCSV
+## 4、arrayToCSV
 
 
 此段代码将没有逗号或双引号的元素转换成带有逗号分隔符的字符串即CSV格式识别的形式。
@@ -70,7 +70,7 @@ const arrayToCSV = (arr, delimiter = ',') =>
 arrayToCSV([['a', 'b'], ['c', 'd']]); // '"a","b"\n"c","d"'
 arrayToCSV([['a', 'b'], ['c', 'd']], ';'); // '"a";"b"\n"c";"d"'
 ```
-##5、arrayToHtmlList
+## 5、arrayToHtmlList
 
 
 此段代码将数组元素转换成<li>标记，并将此元素添加至给定的ID元素标记内。
@@ -86,7 +86,7 @@ const arrayToHtmlList = (arr, listID) =>
   
 arrayToHtmlList(['item 1', 'item 2'], 'myListID');
 ```
-##6、attempt
+## 6、attempt
 
 
 此段代码执行一个函数，将剩余的参数传回函数当参数，返回相应的结果，并能捕获异常。
@@ -105,7 +105,7 @@ var elements = attempt(function(selector) {
 }, '>_>');
 if (elements instanceof Error) elements = []; // elements =[]
 ```
-##7、average
+## 7、average
 
 
 此段代码返回两个或多个数的平均数。
@@ -117,7 +117,7 @@ const average = (...nums) => nums.reduce((acc, val) => acc + val, 0) / nums.leng
 average(...[1, 2, 3]); // 2
 average(1, 2, 3); // 2
 ```
-##8、averageBy
+## 8、averageBy
 
 
 一个 map()函数和 reduce()函数结合的例子，此函数先通过 map() 函数将对象转换成数组，然后在调用reduce()函数进行累加，然后根据数组长度返回平均值。
@@ -132,7 +132,7 @@ const averageBy = (arr, fn) =>
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n); // 5
 averageBy([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n'); // 5
 ```
-##9、bifurcate
+## 9、bifurcate
 
 
 此函数包含两个参数，类型都为数组，依据第二个参数的真假条件，将一个参数的数组进行分组，条件为真的放入第一个数组，其它的放入第二个数组。这里运用了Array.prototype.reduce() 和 Array.prototype.push() 相结合的形式。
@@ -145,7 +145,7 @@ const bifurcate = (arr, filter) =>
 bifurcate(['beep', 'boop', 'foo', 'bar'], [true, true, false, true]);
 // [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
-##10、bifurcateBy
+## 10、bifurcateBy
 
 
 此段代码将数组按照指定的函数逻辑进行分组，满足函数条件的逻辑为真，放入第一个数组中，其它不满足的放入第二个数组 。
@@ -167,7 +167,7 @@ bifurcateBy(['beep', 'boop', 'foo', 'bar'], x => x[0] === 'b');
 
 
 ```
-##11、bottomVisible
+## 11、bottomVisible
 
 
 用于检测页面是否滚动到页面底部。
@@ -183,7 +183,7 @@ bottomVisible(); // true
 ```
 
 
-##12、byteSize
+## 12、byteSize
 
 
 此代码返回字符串的字节长度。这里用到了Blob对象，Blob（Binary Large Object）对象代表了一段二进制数据，提供了一系列操作接口。其他操作二进制数据的API（比如File对象），都是建立在Blob对象基础上的，
@@ -200,7 +200,7 @@ const byteSize = str => new Blob([str]).size;
 byteSize('😀'); // 4
 byteSize('Hello World'); // 11
 ```
-##13、capitalize
+## 13、capitalize
 
 
 将字符串的首字母转成大写,这里主要运用到了ES6的展开语法在数组中的运用。
@@ -214,7 +214,7 @@ const capitalize = ([first, ...rest]) =>
 capitalize('fooBar'); // 'FooBar'
 capitalize('fooBar', true); // 'FooBar'
 ```
-##14、capitalizeEveryWord
+## 14、capitalizeEveryWord
 
 
 将一个句子中每个单词首字母转换成大写字母，这里中要运用了正则表达式进行替换。
@@ -236,7 +236,7 @@ capitalizeEveryWord('hello world!'); // 'Hello World!'
 
 
 ```
-##15、castArray
+## 15、castArray
 
 
 此段代码将非数值的值转换成数组对象。
@@ -259,7 +259,7 @@ castArray([1]); // [1]
 
 
 ```
-##16、compact
+## 16、compact
 
 
 将数组中移除值为 false 的内容。
@@ -273,7 +273,7 @@ const compact = arr => arr.filter(Boolean);
 compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]);
 // [ 1, 2, 3, 'a', 's', 34 ]
 ```
-##17、countOccurrences
+## 17、countOccurrences
 
 
 统计数组中某个值出现的次数
@@ -284,7 +284,7 @@ compact([0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34]);
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 countOccurrences([1, 1, 2, 1, 2, 3], 1); // 3
 ```
-##18、Create Directory
+## 18、Create Directory
 
 
 此代码段使用 existSync() 检查目录是否存在，然后使用 mkdirSync() 创建目录（如果不存在）。
@@ -301,7 +301,7 @@ createDirIfNotExists('test');
 
 
 ```
-##19、currentURL
+## 19、currentURL
 
 
 返回当前访问的 URL 地址。
@@ -318,7 +318,7 @@ currentURL(); // 'https://medium.com/@fatosmorina'
 
 
 ```
-##20、dayOfYear
+## 20、dayOfYear
 
 
 返回当前是今年的第几天
@@ -332,7 +332,7 @@ const dayOfYear = date =>
 
 dayOfYear(new Date()); // 272
 ```
-##21、decapitalize
+## 21、decapitalize
 
 
 将字符串的首字母转换成小写字母

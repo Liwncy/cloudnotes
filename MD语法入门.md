@@ -1,8 +1,8 @@
-#.MD语法入门
+# .MD语法入门
 .md即markdown文件的基本常用编写语法,是一种快速标记、快速排版语言，现在很多前段项目中的说明文件readme等都是用.md文件编写的，而且很多企业也在在鼓励使用这种编辑方式，特别作为一个前端从业者更要学会使用这种语言。下面就简单和大家分享一些.md基本语法
-#####一、基本符号：* - +. >
+##### 一、基本符号：* - +. >
 基本上所有的markdown标记都是基于这四个符号或组合，需要注意的是，如果以基本符号开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。
-#####二、标题
+##### 二、标题
 1.前面带#号，后面带文字，分别表示h1-h6,只到h6，而且h1下面会有一条横线
 ```
 # 一级标题
@@ -24,8 +24,8 @@
 
 ```
 效果如下：
-![image.png](https:////upload-images.jianshu.io/upload_images/13623636-1be77fac16e71320.png "image")
-#####三、列表
+![image.png](https://upload-images.jianshu.io/upload_images/13623636-1be77fac16e71320.png?imageMogr2/auto-orient/strip|imageView2/2/w/182/format/webp "image")
+##### 三、列表
 * 无序列表
 ```
 //形式一
@@ -84,7 +84,7 @@
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-ea18c221bda4801d.png "image")
 列表可以嵌套，使用时在嵌套列表前按 tab 或 空格 来缩进,去控制列表的层数
-#####四、引用说明区块
+##### 四、引用说明区块
 对某个部分做的内容做一些说明或者引用某某的话等，可以用这个语法。
 * 正常形式
 ```
@@ -108,7 +108,7 @@
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-1aabce7718f76dab.png "image")
-#####五、代码块
+##### 五、代码块
 在发布一些技术文章会涉及展示代码的问题，这时候代码块就显得尤为重要。
 * 少量代码，单行使用，直接用`包裹起来就行了
 ```
@@ -132,7 +132,7 @@
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-f36ccf1b4129df6b.png "image")
-#####六、链接
+##### 六、链接
 * 行内式
 链接的文字放在[]中，链接地址放在随后的()中，链接也可以带title属性，链接地址后面空一格，然后用引号引起来
 ```
@@ -154,7 +154,7 @@
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-94e98682ec1d1e8c.png "image")
-#####七、图片
+##### 七、图片
 * 行内式
 和链接的形式差不多，图片的名字放在[]中，图片地址放在随后的()中，title属性（图片地址后面空一格，然后用引号引起来）,注意的是[]前要加上!
 ```
@@ -175,7 +175,7 @@
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-6d878e3d3ef63825.png "image")
-#####八、分割线
+##### 八、分割线
 分割线可以由* - _（星号，减号，底线）这3个符号的至少3个符号表示，注意至少要3个，且不需要连续，有空格也可以
 ```
 ---
@@ -192,7 +192,7 @@ ______
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-d714148b4379f47b.png "image")
-#####九、其他
+##### 九、其他
 * 强调字体
 一个星号或者是一个下划线包起来，会转换为<em>倾斜，如果是2个，会转换为<strong>加粗
 ```
@@ -225,7 +225,7 @@ _md_
 
 
 ![image.png](https:////upload-images.jianshu.io/upload_images/13623636-609dee16fabaddd0.png "image")
-#####十、表格
+##### 十、表格
 ```
 //例子一
 |123|234|345|
@@ -251,4 +251,4 @@ abc|bcd|cde
 1. 表格的格式不一定要对的非常起，但是为了良好的变成风格，尽量对齐是最好的
 2. 分割线后面的冒号表示对齐方式，写在左边表示左对齐，右边为右对齐，两边都写表示居中
 效果图如下：
-![image.png](https://upload-images.jianshu.io/upload_images/13623636-e12253979ce0ab66.png?imageMogr2/auto-orient/strip|imageView2/2/w/888/format/webp "image")
+![image.png](https:////upload-images.jianshu.io/upload_images/13623636-e12253979ce0ab66.png "image")
