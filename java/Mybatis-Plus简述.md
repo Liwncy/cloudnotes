@@ -1,27 +1,27 @@
-##演示：MyBatisPlus写业务代码确实一把梭！
+## 演示：MyBatisPlus写业务代码确实一把梭！
 
 如果你每天还在重复写CRUD的SQL，如果你对这些 SQL 已经不耐烦了，那么你何不花费一些时间来阅读这篇文章，然后对已有的老项目进行改造，必有收获！
-##一、MP 是什么
+## 一、MP 是什么
 MP 全称 Mybatis-Plus ，套用官方的解释便是成为 MyBatis 最好的搭档,简称基友。它是在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
 
 ![image.png](https://mmbiz.qpic.cn/mmbiz_png/xq9PqibkVAzpH0tWcBJHPTS0aRwrhKxKs6hjfyVSxxiaARliavvAS7Kic61QQYwCQTEMkxXc7bicIsibXOH1eWrZQ8cA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1 "image")
-###1. 三大特性
-####1）润物无声
+### 1. 三大特性
+#### 1）润物无声
 只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑。
-####2）效率至上
+#### 2）效率至上
 只需简单配置，即可快速进行单表 CRUD 操作，从而节省大量时间。
-####3）丰富功能
+#### 3）丰富功能
 代码生成、物理分页、性能分析等功能一应俱全。
-###2. 支持数据库
+### 2. 支持数据库
 * mysql 、mariadb 、oracle 、db2 、h2 、hsql 、sqlite 、postgresql 、sqlserver 、presto 、Gauss 、Firebird
 * Phoenix 、clickhouse 、Sybase ASE 、 OceanBase 、达梦数据库 、虚谷数据库 、人大金仓数据库 、南大通用数据库
-###3. 框架结构
+### 3. 框架结构
 ![image.png](https://mmbiz.qpic.cn/mmbiz_jpg/P7WuIzkp9iaVmeo0oMwmYlpby81N5kEubYKiaoiaRcrOAyXSxkSyiaTWEUJ2icYHHh1S4t2nd4Nm1HnslrBcC9iaqeHQ/640?wx_fmt=jpeg "image")
 实话说，以上这些内容只要你打开官网也能看到，那么我们接下来就先来实际操作一番！
 ![image.png](https://mmbiz.qpic.cn/mmbiz_gif/P7WuIzkp9iaVmeo0oMwmYlpby81N5kEub38XIvzm2p1PE2DBIu6ialUdZibDLBXO4MDTUoaGETILdlEVzfMdMKqLw/640?wx_fmt=gif "image")
-##二、MP实战
-###1. 手摸手式项目练习
-####1）数据库及表准备
+## 二、MP实战
+### 1. 手摸手式项目练习
+#### 1）数据库及表准备
 sql 语句：
 ```
 use test;
@@ -39,7 +39,7 @@ INSERT INTO `student` VALUES (1, 1, '小菜', '关注小菜不迷路！')
 INSERT INTO `student` VALUES (2, 2, '小明', '好好学习，天天向上！');
 
 ```
-####2）pom 依赖
+#### 2）pom 依赖
 ```
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -77,7 +77,7 @@ INSERT INTO `student` VALUES (2, 2, '小明', '好好学习，天天向�
 </dependency>
 
 ```
-####3）配置文件
+#### 3）配置文件
 ```
 spring:
   datasource:
@@ -87,7 +87,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 ```
-####4）实体类
+#### 4）实体类
 ```
 @Data
 @Builder
@@ -105,12 +105,12 @@ public class User {
 }
 
 ```
-####5）Mapper
+#### 5）Mapper
 ```
 public interface UserMapper extends BaseMapper<User> {}
 
 ```
-####6）测试类
+#### 6）测试类
 ```
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -133,8 +133,8 @@ User(id=2, deptId=1, name=小明, remark=好好学习，天天向上！)
 ```
 小菜结：
 在以上的结果，我们可以看到已经打印出了数据库中的全部数据（两条）。而并没有看到平时我们需要写的 mapper.xml 文件，只是用到了 usermapper 中的 selectList() 方法，而 UserMapper 继承了 BaseMapper 这个接口，这个接口便是 MybatisPlus 提供给我们的，我们再来看下这个接口给我们提供了哪些方法。
-###2.  CRUD 基操
-####1）insert
+### 2.  CRUD 基操
+#### 1）insert
 ```
 @Test
 public void insert() {
@@ -167,7 +167,7 @@ public void insert() {
 用在预处理 set 字段自定义注入，比如我配置了 @TableField(update = "%s+1")，其中 %s 会填充字段，输出 SQL 为：update 表名 set 字段 = 字段+1 where 条件
 * select
 用于是否查询时约束，如果我们有个字段 remark 是 text 类型的，查询的时候不想查询该字段，那么就可以使用 @TableField(select = false) 来约束查询的时候不查询该字段
-####2）update
+#### 2）update
 MybatisPlus 的更新操作存在两种：
 ```
 int updateById(Param("et") T entity);
@@ -175,7 +175,7 @@ int updateById(Param("et") T entity);
 int update(@Param("et") T entity, @Param("ew") Wrapper<T> updateWrapper);
 
 ```
-#####根据 ID 更新
+##### 根据 ID 更新
 ```
 @Test
 public void update() {
@@ -187,7 +187,7 @@ User(id=3, deptId=1, name=小华, remark=小华爱玩游戏)
 **/
 
 ```
-#####根据条件更新
+##### 根据条件更新
 ```
 @Test
 public void update() {
@@ -214,7 +214,7 @@ User(id=3, deptId=1, name=小华, remark=小华爱游泳)
 **/
 
 ```
-####3）delete
+#### 3）delete
 在 MybatisPlus 中删除的方式相对于更新多，总共有四种：
 ```
 int deleteById(Serializable id);
@@ -226,7 +226,7 @@ int delete(@Param("ew") Wrapper<T> wrapper);
 int deleteBatchIds(@Param("coll") Collection<? extends Serializable> idList);
 
 ```
-#####根据 ID 删除
+##### 根据 ID 删除
 ```
 @Test
 public void deleteById() {
@@ -237,7 +237,7 @@ DELETE FROM student WHERE id = 3;
 **/
 
 ```
-#####根据 Map 删除
+##### 根据 Map 删除
 ```
 @Test
 public void deleteByMap() {
@@ -251,7 +251,7 @@ DELETE FROM student WHRE name = '小华' AND remark = '小华爱游泳
 **/
 
 ```
-#####根据 Wrapper 删除
+##### 根据 Wrapper 删除
 ```
 @Test
 public void delete() {
@@ -277,7 +277,7 @@ DELETE FROM student WHRE remark = '小华爱下棋';
 **/
 
 ```
-#####根据 ID 批量删除
+##### 根据 ID 批量删除
 ```
 @Test
 public void deleteBatchIds() {
@@ -291,7 +291,7 @@ DELETE FROM student WHERE id In (4,7)
 **/
 
 ```
-####4）select
+#### 4）select
 查询操作在我们开发中是最经常用到的，也是重中之重。MybatisPlus 中支持查询的方法也比较多，如下：
 ```
 T selectById(Serializable id);
@@ -316,7 +316,7 @@ IPage<Map<String, Object>> selectMapsPage(IPage<T> page, @Param("ew") Wrapp
 
 ```
 可以看到总共有 10 个方法，我们接下来一个一个测试
-#####查询所有
+##### 查询所有
 ```
 @Test
 public void selectList() {
@@ -332,7 +332,7 @@ SELECT id, dept_id, name, remark FROM student;
 **/
 
 ```
-#####查询数量
+##### 查询数量
 ```
 @Test
 public void selectCount() {
@@ -348,7 +348,7 @@ SELECT COUNT( 1 ) FROM student WHERE (name LIKE '%小%');
 **/
 
 ```
-#####根据 ID 查询
+##### 根据 ID 查询
 ```
 @Test
 public void selectById() {
@@ -363,7 +363,7 @@ SELECT id, dept_id, name, remark FROM student WHERE ID = 1;
 **/
 
 ```
-#####根据 ID 批量查询
+##### 根据 ID 批量查询
 ```
 @Test
 public void selectBatchIds() {
@@ -379,7 +379,7 @@ SELECT id, dept_id, name, remark FROM student WHERE ID IN (1, 2);
 **/
 
 ```
-#####根据条件查询单条
+##### 根据条件查询单条
 ```
 @Test
 public void selectOne() {
@@ -396,7 +396,7 @@ User(id=1, deptId=1, name=小菜, remark=关注小菜不迷路！)
 **/
 
 ```
-#####根据条件查询多条
+##### 根据条件查询多条
 通过 map 传递参数，不是通过 LIKE 查询，而是通过 = 查询
 ```
 @Test
@@ -449,7 +449,7 @@ SELECT id, name, dept_id, remark FROM student WHERE (name LIKE '%小%');
 **/
 
 ```
-#####分页查询
+##### 分页查询
 ```
 @Test
 public void selectPage() {
@@ -478,10 +478,10 @@ User(id=1, deptId=1, name=小菜, remark=关注小菜不迷路！)
 **/
 
 ```
-###3. 条件构造器
+### 3. 条件构造器
 ![image.png](https://mmbiz.qpic.cn/mmbiz_png/P7WuIzkp9iaVmeo0oMwmYlpby81N5kEubEaiauzrRic2EoozxFWf3ZaiavcI4nK5mPsSNkxsFPHWoVxPqUCUUMsuXA/640?wx_fmt=png "image")
 在 CRUD 的基本操作中，我们想要通过条件查询都是通过 Wrapper 类进行封装的，上面只是简单的用到 eq 和 like 操作。事实上这个类十分强大，我们在下面会详细进行介绍。
-####1）allEq
+#### 1）allEq
 全部 eq 或个别 isNull
 ```
 allEq(Map<R, V> params)
@@ -587,7 +587,7 @@ public void testAllEq() {
  **/
 
 ```
-####2）比较操作
+#### 2）比较操作
 * eq： 相当于 =
 * ne： 相当于 !=
 * gt：  相当于 >
@@ -598,12 +598,12 @@ public void testAllEq() {
 * notBetween：   相当于not between ... and ...
 * in：   相当于in(.., .., ..)
 * notIn：   相当于not in(.., .., ..)
-####3）模糊查询
+#### 3）模糊查询
 * like： like("name","小菜") --> name like "%小菜%"
 * notLike： notLike("name","小菜") --> name not like "%小菜%"
 * likeLeft：  like("name","小菜") --> name like "%小菜"
 * likeRight： like("name","小菜") --> name like "小菜%"
-####4）排序
+#### 4）排序
 * orderBy：
 ```
 orderBy(boolean condition, boolean isAsc, R... columns)
@@ -614,16 +614,16 @@ orderBy(true, true, "id", "name") --> order by id ASC, name ASC
 orderByAsc("id","name") --> order by id ASC, name ASC
 * orderByDesc：
 orderByDesc("id","name) --> order by id Desc, name Desc
-####5）逻辑查询
+#### 5）逻辑查询
 * or：
 拼接：主动调用 or 表示紧接着下一个方法不是用 and 连接!(不调用 or 则默认为使用 and 连接)， eq("id",1).or().eq("name","老王")
 嵌套：or(i -> i.eq("name", "李白").ne("status", "活着"))
 * and：
 嵌套：and(i -> i.eq("name", "李白").ne("status", "活着"))
-####6）select
+#### 6）select
 在MP查询中，默认查询所有的字段，如果有需要也可以通过select方法进行指定字段，如select("id", "name")
-###4. 配置讲解
-####1）基本配置
+### 4. 配置讲解
+#### 1）基本配置
 * configLocation
 用于指明 **MyBatis ** 配置文件的位置，如果我们有 MyBatis 的配置文件，需将配置文件的路径配置到 configLocation 中
 SpringBoot：
@@ -670,7 +670,7 @@ value="com.baomidou.mybatisplus.samples.quickstart.entity"/>
 </bean>
 
 ```
-####2）进阶配置
+#### 2）进阶配置
 * mapUnderScoreToCamelCase
 是否开启自动驼峰命名规则映射，这个配置的默认值是 true，但是这个属性在 MyBatis 中的默认值是 false，所以在我们平时的开发中都会将这个配置开启。
 ```
@@ -684,7 +684,7 @@ mybatis-plus.configuration.map-underscore-to-camel-case = false
 mybatis-plus.configuration.cache-enabled = false
 
 ```
-####3）DB 策略配置
+#### 3）DB 策略配置
 * idType
 全局默认主键类型，设置后，即可省略实体对象中的@TableId(type = IdType.AUTO)配置。该配置的默认值为 ID_WORKER
 SpringBoot：
@@ -734,8 +734,8 @@ class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
 </bean>
 
 ```
-###5. 其他扩展
-####1）自动填充
+### 5. 其他扩展
+#### 1）自动填充
 有时候我们在插入或更新数据的时候，希望有些字段可以自动填充。比如我们平时数据表里面会有个 插入时间 或者 更新时间 这种字段，我们会默认以当前时间填充，在 MP 中我们也可以进行配置。
 首先我们需要借助 @TableField(fill = FieldFill.INSERT) 这个注解，在插入时进行填充。
 ```
@@ -799,7 +799,7 @@ VALUES ( '小明', 1, '好好学习' );
 
 ```
 可以看到插入时，已经自动将我们填充的字段合并进去。
-####2）逻辑删除
+#### 2）逻辑删除
 在开发中，很多时候我们删除数据并不需要真正意义上的物理删除，而是使用逻辑删除，这样子查询的时候需要状态条件，确保被标记的数据不被查询到。MP 当然也支持这样的功能。
 我们需要先为 student 表添加一个字段 status 来声明数据是否被删除，0 表示被删除，1表示未删除，然后也需要在实体类上增加这个属性：
 ```
@@ -830,7 +830,7 @@ WHERE id=1 AND status=1;
 
 ```
 可以看出这段 SQL 并没有真正删除，而是进行了逻辑删除，只是更新了删除标识
-####3）通用枚举
+#### 3）通用枚举
 如果有性别之类的字段，我们通常会用 0 和 1 来表示，但是查出来我们得进行值转换，这个时候我们就可以使用枚举来解决这个问题：
 首先为 student 表添加一个 sex 字段来表示性别，0 表示女性，1 表示男性，然后定义一个枚举类：
 ```
